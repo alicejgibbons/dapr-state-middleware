@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: csharp-service
+  namespace: dapr-pubsub-state
+  labels:
+    app: csharp-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: csharp-service
+  template:
+    metadata:
+      labels:
+        app: csharp-service
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "csharp-service"
+        dapr.io/app-port: "5009"
+    spec:
+      containers:
+      - name: csharp-service
+        image: alicejgibbons/csharp-service:1.0
+        ports:
+        - containerPort: 5009
+        imagePullPolicy: Always

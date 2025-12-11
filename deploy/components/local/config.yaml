@@ -1,0 +1,10 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: pipeline
+  namespace: default
+spec:
+  appHttpPipeline:
+    handlers:
+      - name: uppercase
+        type: middleware.http.uppercase
