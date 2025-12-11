@@ -66,7 +66,7 @@ npm install
 ```
 
 ```bash
-dapr run --app-id csharp-service --app-port 5009 --dapr-http-port 6002 --dapr-grpc-port 6092 --config ../deploy/components/local/config.yaml --log-level debug --resources-path ../deploy/components/local dotnet run  
+dapr run --app-id react-form --app-port 8080 --dapr-http-port 6000 --dapr-grpc-port 6090 --resources-path ../deploy/components/local npm run start 
 ```
 
 This may take a minute, as it downloads dependencies and creates an optimized production build. You'll know that it's done when you see `== APP == Listening on port 8080!` and several Dapr logs.
